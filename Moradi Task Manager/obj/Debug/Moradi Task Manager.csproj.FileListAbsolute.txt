@@ -13,3 +13,18 @@ C:\Users\Admin\Documents\Visual Studio 2015\Projects\Moradi Task Manager\Moradi 
 C:\Users\Admin\Documents\Visual Studio 2015\Projects\Moradi Task Manager\Moradi Task Manager\obj\Debug\Moradi Task Manager.pdb
 C:\Users\Admin\Documents\Visual Studio 2015\Projects\Moradi Task Manager\Moradi Task Manager\obj\Debug\Moradi Task Manager.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Documents\Visual Studio 2015\Projects\Moradi Task Manager\Moradi Task Manager\obj\Debug\Moradi_Task_Manager.NewTask.resources
+C:\Users\Brett Tech\Documents\GitHub\Moradi-Task-Manager\Moradi Task Manager\bin\Debug\Moradi Task Manager.exe.config
+C:\Users\Brett Tech\Documents\GitHub\Moradi-Task-Manager\Moradi Task Manager\bin\Debug\Moradi Task Manager.exe
+C:\Users\Brett Tech\Documents\GitHub\Moradi-Task-Manager\Moradi Task Manager\bin\Debug\Moradi Task Manager.pdb
+C:\Users\Brett Tech\Documents\GitHub\Moradi-Task-Manager\Moradi Task Manager\bin\Debug\MetroFramework.Design.dll
+C:\Users\Brett Tech\Documents\GitHub\Moradi-Task-Manager\Moradi Task Manager\bin\Debug\MetroFramework.dll
+C:\Users\Brett Tech\Documents\GitHub\Moradi-Task-Manager\Moradi Task Manager\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Brett Tech\Documents\GitHub\Moradi-Task-Manager\Moradi Task Manager\obj\Debug\Moradi Task Manager.csprojAssemblyReference.cache
+C:\Users\Brett Tech\Documents\GitHub\Moradi-Task-Manager\Moradi Task Manager\obj\Debug\Moradi_Task_Manager.Form1.resources
+C:\Users\Brett Tech\Documents\GitHub\Moradi-Task-Manager\Moradi Task Manager\obj\Debug\Moradi_Task_Manager.NewTask.resources
+C:\Users\Brett Tech\Documents\GitHub\Moradi-Task-Manager\Moradi Task Manager\obj\Debug\Moradi_Task_Manager.Properties.Resources.resources
+C:\Users\Brett Tech\Documents\GitHub\Moradi-Task-Manager\Moradi Task Manager\obj\Debug\Moradi Task Manager.csproj.GenerateResource.cache
+C:\Users\Brett Tech\Documents\GitHub\Moradi-Task-Manager\Moradi Task Manager\obj\Debug\Moradi Task Manager.csproj.CoreCompileInputs.cache
+C:\Users\Brett Tech\Documents\GitHub\Moradi-Task-Manager\Moradi Task Manager\obj\Debug\Moradi Task Manager.csproj.CopyComplete
+C:\Users\Brett Tech\Documents\GitHub\Moradi-Task-Manager\Moradi Task Manager\obj\Debug\Moradi Task Manager.exe
+C:\Users\Brett Tech\Documents\GitHub\Moradi-Task-Manager\Moradi Task Manager\obj\Debug\Moradi Task Manager.pdb
