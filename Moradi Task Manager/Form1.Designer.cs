@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.SysInfo = new MetroFramework.Controls.MetroTabControl();
             this.TaskManager = new MetroFramework.Controls.MetroTabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -72,6 +73,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.sysinfotimer = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notifymenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.sizeNormalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moradiTaskManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.SysInfo.SuspendLayout();
             this.TaskManager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -83,6 +90,7 @@
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pRAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pCPU)).BeginInit();
+            this.notifymenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // SysInfo
@@ -95,9 +103,9 @@
             this.SysInfo.Controls.Add(this.metroTabPage1);
             this.SysInfo.Controls.Add(this.About);
             this.SysInfo.Location = new System.Drawing.Point(16, 78);
-            this.SysInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SysInfo.Margin = new System.Windows.Forms.Padding(4);
             this.SysInfo.Name = "SysInfo";
-            this.SysInfo.SelectedIndex = 3;
+            this.SysInfo.SelectedIndex = 0;
             this.SysInfo.Size = new System.Drawing.Size(865, 574);
             this.SysInfo.TabIndex = 0;
             this.SysInfo.UseSelectable = true;
@@ -109,7 +117,7 @@
             this.TaskManager.HorizontalScrollbarHighlightOnWheel = false;
             this.TaskManager.HorizontalScrollbarSize = 12;
             this.TaskManager.Location = new System.Drawing.Point(4, 38);
-            this.TaskManager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TaskManager.Margin = new System.Windows.Forms.Padding(4);
             this.TaskManager.Name = "TaskManager";
             this.TaskManager.Size = new System.Drawing.Size(857, 532);
             this.TaskManager.TabIndex = 0;
@@ -131,7 +139,7 @@
             this.processID,
             this.MemorySize});
             this.dataGridView1.Location = new System.Drawing.Point(-5, 5);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(860, 522);
@@ -172,7 +180,7 @@
             this.CpuRamManager.HorizontalScrollbarHighlightOnWheel = false;
             this.CpuRamManager.HorizontalScrollbarSize = 12;
             this.CpuRamManager.Location = new System.Drawing.Point(4, 38);
-            this.CpuRamManager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CpuRamManager.Margin = new System.Windows.Forms.Padding(4);
             this.CpuRamManager.Name = "CpuRamManager";
             this.CpuRamManager.Size = new System.Drawing.Size(857, 532);
             this.CpuRamManager.TabIndex = 1;
@@ -186,23 +194,23 @@
             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(-47, 124);
-            this.chart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chart1.Margin = new System.Windows.Forms.Padding(4);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Legend = "Legend1";
-            series3.Name = "CPU";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Legend = "Legend1";
-            series4.Name = "RAM";
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "CPU";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "RAM";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(948, 402);
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
@@ -258,7 +266,7 @@
             this.metroProgressBar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.metroProgressBar2.Location = new System.Drawing.Point(75, 79);
-            this.metroProgressBar2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroProgressBar2.Margin = new System.Windows.Forms.Padding(4);
             this.metroProgressBar2.Name = "metroProgressBar2";
             this.metroProgressBar2.Size = new System.Drawing.Size(685, 38);
             this.metroProgressBar2.TabIndex = 3;
@@ -268,7 +276,7 @@
             this.metroProgressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.metroProgressBar1.Location = new System.Drawing.Point(75, 37);
-            this.metroProgressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroProgressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.metroProgressBar1.Name = "metroProgressBar1";
             this.metroProgressBar1.Size = new System.Drawing.Size(685, 38);
             this.metroProgressBar1.TabIndex = 2;
@@ -280,7 +288,7 @@
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.HorizontalScrollbarSize = 12;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.metroTabPage1.Name = "metroTabPage1";
             this.metroTabPage1.Size = new System.Drawing.Size(857, 532);
             this.metroTabPage1.TabIndex = 3;
@@ -299,7 +307,7 @@
             this.faderPanel1.Controls.Add(this.faderLabel2);
             this.faderPanel1.Controls.Add(this.faderLabel1);
             this.faderPanel1.Location = new System.Drawing.Point(-3, 4);
-            this.faderPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.faderPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.faderPanel1.Name = "faderPanel1";
             this.faderPanel1.Size = new System.Drawing.Size(857, 512);
             this.faderPanel1.TabIndex = 2;
@@ -310,7 +318,7 @@
             this.faderLabel4.BackColor = System.Drawing.Color.Transparent;
             this.faderLabel4.Border = true;
             this.faderLabel4.Location = new System.Drawing.Point(13, 153);
-            this.faderLabel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.faderLabel4.Margin = new System.Windows.Forms.Padding(4);
             this.faderLabel4.Name = "faderLabel4";
             this.faderLabel4.Size = new System.Drawing.Size(841, 37);
             this.faderLabel4.TabIndex = 0;
@@ -321,7 +329,7 @@
             this.faderLabel6.BackColor = System.Drawing.Color.Transparent;
             this.faderLabel6.Border = true;
             this.faderLabel6.Location = new System.Drawing.Point(12, 241);
-            this.faderLabel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.faderLabel6.Margin = new System.Windows.Forms.Padding(4);
             this.faderLabel6.Name = "faderLabel6";
             this.faderLabel6.Size = new System.Drawing.Size(841, 37);
             this.faderLabel6.TabIndex = 0;
@@ -332,7 +340,7 @@
             this.faderLabel3.BackColor = System.Drawing.Color.Transparent;
             this.faderLabel3.Border = true;
             this.faderLabel3.Location = new System.Drawing.Point(13, 108);
-            this.faderLabel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.faderLabel3.Margin = new System.Windows.Forms.Padding(4);
             this.faderLabel3.Name = "faderLabel3";
             this.faderLabel3.Size = new System.Drawing.Size(841, 37);
             this.faderLabel3.TabIndex = 0;
@@ -343,7 +351,7 @@
             this.faderLabel5.BackColor = System.Drawing.Color.Transparent;
             this.faderLabel5.Border = true;
             this.faderLabel5.Location = new System.Drawing.Point(12, 197);
-            this.faderLabel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.faderLabel5.Margin = new System.Windows.Forms.Padding(4);
             this.faderLabel5.Name = "faderLabel5";
             this.faderLabel5.Size = new System.Drawing.Size(841, 37);
             this.faderLabel5.TabIndex = 0;
@@ -354,7 +362,7 @@
             this.faderLabel2.BackColor = System.Drawing.Color.Transparent;
             this.faderLabel2.Border = true;
             this.faderLabel2.Location = new System.Drawing.Point(12, 64);
-            this.faderLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.faderLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.faderLabel2.Name = "faderLabel2";
             this.faderLabel2.Size = new System.Drawing.Size(841, 37);
             this.faderLabel2.TabIndex = 0;
@@ -365,7 +373,7 @@
             this.faderLabel1.BackColor = System.Drawing.Color.Transparent;
             this.faderLabel1.Border = true;
             this.faderLabel1.Location = new System.Drawing.Point(12, 20);
-            this.faderLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.faderLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.faderLabel1.Name = "faderLabel1";
             this.faderLabel1.Size = new System.Drawing.Size(841, 37);
             this.faderLabel1.TabIndex = 0;
@@ -381,7 +389,7 @@
             this.About.HorizontalScrollbarHighlightOnWheel = false;
             this.About.HorizontalScrollbarSize = 12;
             this.About.Location = new System.Drawing.Point(4, 38);
-            this.About.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.About.Margin = new System.Windows.Forms.Padding(4);
             this.About.Name = "About";
             this.About.Size = new System.Drawing.Size(857, 532);
             this.About.TabIndex = 2;
@@ -462,7 +470,7 @@
             // 
             this.metroButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.metroButton1.Location = new System.Drawing.Point(761, 647);
-            this.metroButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroButton1.Margin = new System.Windows.Forms.Padding(4);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(112, 28);
             this.metroButton1.TabIndex = 3;
@@ -494,10 +502,10 @@
             // 
             // 
             this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(488, 2);
-            this.metroTextBox1.CustomButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(366, 2);
+            this.metroTextBox1.CustomButton.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(31, 28);
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox1.CustomButton.TabIndex = 1;
             this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -505,7 +513,7 @@
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Lines = new string[0];
             this.metroTextBox1.Location = new System.Drawing.Point(256, 671);
-            this.metroTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.metroTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -553,13 +561,62 @@
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(656, 647);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 28);
             this.button1.TabIndex = 7;
             this.button1.Text = "New Task";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.ContextMenuStrip = this.notifymenu;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "Moradi Task Manager\r\n";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.BalloonTipShown += new System.EventHandler(this.notifyIcon1_BalloonTipShown);
+            this.notifyIcon1.Click += new System.EventHandler(this.notifyIcon1_Click);
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // notifymenu
+            // 
+            this.notifymenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.notifymenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.moradiTaskManagerToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.sizeNormalToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.notifymenu.Name = "notifymenu";
+            this.notifymenu.Size = new System.Drawing.Size(230, 82);
+            this.notifymenu.Text = "Moradi Task Manager";
+            // 
+            // sizeNormalToolStripMenuItem
+            // 
+            this.sizeNormalToolStripMenuItem.Name = "sizeNormalToolStripMenuItem";
+            this.sizeNormalToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
+            this.sizeNormalToolStripMenuItem.Text = "&Size: Normal";
+            this.sizeNormalToolStripMenuItem.Click += new System.EventHandler(this.sizeNormalToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
+            this.exitToolStripMenuItem.Text = "&Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // moradiTaskManagerToolStripMenuItem
+            // 
+            this.moradiTaskManagerToolStripMenuItem.Enabled = false;
+            this.moradiTaskManagerToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.moradiTaskManagerToolStripMenuItem.Name = "moradiTaskManagerToolStripMenuItem";
+            this.moradiTaskManagerToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
+            this.moradiTaskManagerToolStripMenuItem.Text = "&Moradi Task Manager";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(226, 6);
             // 
             // Form1
             // 
@@ -572,11 +629,12 @@
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.SysInfo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Text = "Moradi Task Manager | Moradi OS Development";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.SysInfo.ResumeLayout(false);
             this.TaskManager.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -590,6 +648,7 @@
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pRAM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pCPU)).EndInit();
+            this.notifymenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -636,6 +695,12 @@
         private Fader_Theme.FaderLabel faderLabel1;
         private System.Windows.Forms.Timer sysinfotimer;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ContextMenuStrip notifymenu;
+        private System.Windows.Forms.ToolStripMenuItem sizeNormalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem moradiTaskManagerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     }
 }
 

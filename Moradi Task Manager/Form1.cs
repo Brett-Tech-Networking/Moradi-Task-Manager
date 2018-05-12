@@ -42,6 +42,9 @@ namespace Moradi_Task_Manager
             faderLabel4.Text = "User Domain: " + SystemInformation.UserDomainName;
             faderLabel5.Text = "Network Connection: " + SystemInformation.Network;
             faderLabel6.Text = "Mouse Speed: " + SystemInformation.MouseSpeed;
+
+            
+       
         }
 
         private void TaskmgrTimer_Tick(object sender, EventArgs e)
@@ -115,6 +118,48 @@ namespace Moradi_Task_Manager
             NewTask nt = new NewTask();
             nt.Show();
 
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {            
+            ShowInTaskbar = true;
+            WindowState = FormWindowState.Normal;
+        }
+
+        private void notifyIcon1_BalloonTipShown(object sender, EventArgs e)
+        {
+            
+            }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                this.Hide();
+                notifyIcon1.ShowBalloonTip(100, "Moradi Task Manager", "Minimized", ToolTipIcon.Info);
+            }
+        }
+
+        private void sizeNormalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Show();
+            }
+            catch
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void notifyIcon1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
